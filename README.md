@@ -11,6 +11,24 @@
 
 ## 타임 라인
 <details>
-<summary><h3>Day1 - 초기 프로젝트 생성 및 사용자 인증 구현</h3></summary>
-    
+<summary>Day1 - 초기 프로젝트 생성 및 사용자 인증 구현</summary>
+
+- 학습 정리 링크  
+  https://battle-baron-32c.notion.site/f1a0697a40b84d078d630724b5ae6542
+
+- 작업 내역
+    - [x] 초기 스프링 부트 프로젝트 생성
+    - [x] 초기 로그인 화면 생성
+    - [x] authorization code 정상 수신 확인
+    - [x] access token 정상 수신 확인
+    - [x] access token 을 활용해 사용자 정보 읽어오기
+    - [ ] 테스트 코드 작성
+
+- 회고
+  - 생각보다 OAuth 공부에 시간이 많이 소요되어, 사용자 인증을 완성하지 못했다...ㅠㅠ
+  - 내일 오전에 조금 일찍 일어나, JWT와 refresh token 구현부분을 완성하고 Response 까지 마무리 하는 것이 목표이다!
+
+- 참고 자료
+    - https://velog.io/@max9106/OAuth4
+
 </details>
