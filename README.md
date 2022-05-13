@@ -11,7 +11,7 @@
 
 ## 타임 라인
 <details>
-<summary>Day1 - 초기 프로젝트 생성 및 사용자 인증 구현</summary>
+<summary>Day1 - 초기 프로젝트 생성 및 소셜 로그인 기능 구현</summary>
 
 - 학습 정리 링크  
   https://battle-baron-32c.notion.site/f1a0697a40b84d078d630724b5ae6542
@@ -30,5 +30,21 @@
 
 - 참고 자료
     - https://velog.io/@max9106/OAuth4
+
+</details>
+
+<details>
+<summary>Day2 - Spring Security 전환 및 JWT 적용, 일반 로그인 기능 추가 </summary>
+
+- 학습 정리 링크  
+
+- 작업 내역
+  - [x] 
+
+- 회고
+  - 
+
+- 참고 자료
+  - 
 
 </details>
