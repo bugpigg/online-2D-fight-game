@@ -34,17 +34,19 @@
 </details>
 
 <details>
-<summary>Day2 - Spring Security 전환 및 JWT 적용, 일반 로그인 기능 추가 </summary>
+<summary>Day2, 3 - Spring Security 전환 및 JWT 적용, 일반 로그인 기능 추가 </summary>
 
 - 학습 정리 링크  
-
+    - https://battle-baron-32c.notion.site/Spring-Security-JWT-a3ca7b1f8f7b4ba7a29a598f0742568c
 - 작업 내역
-  - [x] 
+  - 구현하지 못했다.. ㅠㅠ 
 
 - 회고
-  - 
+  - Spring Security + OAuth2 + JWT를 통합하여 구현하려다 보니 갈피를 잡는게 쉽지 않았다...  
+    우선 Spring Securiy + JWT 부터 차근차근 다시 도전해봐야겠다!!
 
 - 참고 자료
-  - 
+  - https://github.com/deepIify/oauth-login-be
+  - https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-jwt#
 
 </details>
