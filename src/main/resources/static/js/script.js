@@ -1,5 +1,5 @@
 const url = 'http://localhost:8080';
-const header = 'Authorization';
+const jwt_header = 'Authorization';
 
 function signup() {
   let username = document.getElementById("username").value;
@@ -19,14 +19,15 @@ function signup() {
         "username": username,
         "password": password,
         "email": email
-      })})
-      .done(function (data) {
-        username = data.userName;
-        alert("Signup Completed!\n Your username is: " + username);
-        window.location.href = '/';
-      }).fail(function (error) {
-        alert(error.responseJSON.message);
-      });
+      })
+    })
+    .done(function (data) {
+      username = data.userName;
+      alert("Signup Completed!\n Your username is: " + username);
+      window.location.href = '/';
+    }).fail(function (error) {
+      alert(error.responseJSON.message);
+    });
   }
 }
 
@@ -46,15 +47,14 @@ function login() {
       data: JSON.stringify({
         "username": username,
         "password": password
-      })})
+      })
+    })
     .done(function (data) {
-      window.localStorage.setItem(header, data.grantType + ' ' + data.accessToken);
-      // 이제 대기실로 연결해 주자!!
-      window.location.href = '/';
+      window.localStorage.setItem(jwt_header,
+          data.grantType + ' ' + data.accessToken);
+      window.location.href='/waiting-room.html';
     }).fail(function (error) {
       console.log(error);
     });
   }
 }
-
-
