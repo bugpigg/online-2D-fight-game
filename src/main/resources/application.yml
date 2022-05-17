@@ -2,7 +2,7 @@
 spring:
   profiles:
     active: dev-h2
-    include: oauth,jwt
+    include: jwt
 ---
 # dev-h2
 spring:
