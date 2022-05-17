@@ -31,11 +31,6 @@ public class AuthService {
 
     @Transactional
     public MemberSignUpResponseDto signUp(MemberSignUpRequestDto requestDto) {
-        String userName = requestDto.getUsername();
-        if (memberRepository.existsByUserName(userName)) {
-            throw new RuntimeException("Duplicated Email exist");
-        }
-
         Member member = requestDto.toMember(passwordEncoder);
         memberRepository.save(member);
         return MemberSignUpResponseDto.of(member);
