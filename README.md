@@ -59,7 +59,9 @@
 
 - 작업 내역
   - [x] 로그인 페이지 및 기능 구현
+    ![image](https://user-images.githubusercontent.com/91416897/168760818-a92e1e2a-9517-4e6b-a435-928b6be278cd.png)
   - [x] 회원가입 페이지 및 기능 구현
+    ![image](https://user-images.githubusercontent.com/91416897/168760938-f90647c5-d966-46dd-8019-b64f7014fb2d.png)
   - [x] accessToken 은 로컬 스토리지에 저장하고, refreshToken 은 쿠키에 저장하도록 설정
   - [ ] 자세한 예외 처리
   
