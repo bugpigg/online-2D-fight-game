@@ -1,5 +1,6 @@
 package com.bugpigg.game.auth.config.jwt;
 
+import com.bugpigg.game.auth.repository.RefreshTokenRepository;
 import com.bugpigg.game.auth.token.JwtFilter;
 import com.bugpigg.game.auth.token.TokenProvider;
 import lombok.RequiredArgsConstructor;
@@ -13,10 +14,11 @@ public class JwtSecurityConfig extends
     SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
 
     private final TokenProvider tokenProvider;
+    private final RefreshTokenRepository refreshTokenRepository;
 
     @Override
     public void configure(HttpSecurity http) {
-        JwtFilter customFilter = new JwtFilter(tokenProvider);
+        JwtFilter customFilter = new JwtFilter(tokenProvider, refreshTokenRepository);
         http.addFilterBefore(customFilter, UsernamePasswordAuthenticationFilter.class);
     }
 }
