@@ -52,9 +52,25 @@ function login() {
     .done(function (data) {
       window.localStorage.setItem(jwt_header,
           data.grantType + ' ' + data.accessToken);
-      window.location.href='/waiting-room.html';
+      window.location.href = '/waiting-room.html';
     }).fail(function (error) {
-      console.log(error);
+      alert(error.responseJSON.message);
     });
   }
+}
+
+function userInfo() {
+  let value = window.localStorage.getItem(jwt_header);
+  $.ajax({
+    url: url + "/user-info",
+    type: 'GET',
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader(jwt_header, value);
+    }
+  }).done(function (data) {
+     document.getElementById('username').innerHTML = '<p>hi ' + data.username + '!!👋</p>';
+  }).fail(function (error) {
+    alert('Login is required!!');
+    window.location.href = '/';
+  });
 }
