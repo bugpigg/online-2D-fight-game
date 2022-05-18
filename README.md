@@ -80,3 +80,28 @@
     - background image
       - unsplash from [Ria](https://unsplash.com/photos/oZzoDW61aoM)
 </details>
+
+<details>
+<summary>Day 6, 7 - 대기실 기능 구현  </summary>
+
+- 작업 내역
+  - BE
+    - [x]  대기실에 입장하면 username 반환하는 API 생성
+    - [x]  검증 로직 수정  
+      DB가 초기화 된 후에도 로컬 저장소에 access Token이 남아 있으면 유효한 Request로 처리함..  
+      이는 아마 검증과정에서 access Token 의 유효성만 검증하기 때문  
+      -> RefreshToken 검증과정 추가
+    - [ ] 접속 중인 유저 리스트 불러오기
+  - FE
+    - [x]  대기실 리스트 템플릿 만들기
+    - [x]  대기실 생성 버튼 만들기
+    - [x]  스크롤바 커스텀하기
+      ![image](https://user-images.githubusercontent.com/91416897/169096021-b3c94a14-6cf7-49ac-93bf-933604826f43.png)
+
+- 참고 자료
+  - html a link 무지개 hover 효과  
+    https://medium.com/guleum/css-%EB%A7%81%ED%81%AC-hover%EC%8B%9C-%EB%AC%B4%EC%A7%80%EA%B0%9C-%ED%9A%A8%EA%B3%BC-css3%EB%A1%9C-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-8981fcb4fbf3
+
+  - 스크롤바 커스텀  
+    https://jh91.tistory.com/entry/css-%EC%8A%A4%ED%81%AC%EB%A1%A4%EB%B0%94-%EC%BB%A4%EC%8A%A4%ED%85%80
+</details>
