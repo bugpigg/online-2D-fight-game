@@ -68,7 +68,7 @@ function userInfo() {
       xhr.setRequestHeader(jwt_header, value);
     }
   }).done(function (data) {
-     document.getElementById('username').innerHTML = '<p>hi ' + data.username + '!!👋</p>';
+     document.getElementById('greeting').innerHTML = 'Welcome,<br><br><strong id="loginedusername">' + data.username + '</strong>!!';
   }).fail(function (error) {
     alert('Login is required!!');
     window.location.href = '/';
