@@ -1,6 +1,7 @@
 package com.bugpigg.game.auth.config;
 
 import com.bugpigg.game.auth.config.jwt.JwtSecurityConfig;
+import com.bugpigg.game.auth.repository.RefreshTokenRepository;
 import com.bugpigg.game.auth.token.TokenProvider;
 import com.bugpigg.game.auth.token.exception.JwtAccessDeniedHandler;
 import com.bugpigg.game.auth.token.exception.JwtAuthenticationEntryPoint;
@@ -20,6 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final TokenProvider tokenProvider;
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     private final JwtAccessDeniedHandler jwtAccessDeniedHandler;
+    private final RefreshTokenRepository refreshTokenRepository;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -48,11 +50,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
             .and()
             .authorizeRequests()
-            .antMatchers("/", "/auth/**", "/h2-console/**").permitAll()
+            .antMatchers("/", "/auth/**", "/*.html", "/h2-console/**", "/css/**", "/js/**",
+                "/images/**").permitAll()
             .anyRequest().authenticated()
 
             .and()
-            .apply(new JwtSecurityConfig(tokenProvider));
+            .apply(new JwtSecurityConfig(tokenProvider, refreshTokenRepository));
     }
 
 }

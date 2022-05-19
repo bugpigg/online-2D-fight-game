@@ -58,7 +58,7 @@ public class TokenProvider {
         return parseClaims(token) != null;
     }
 
-    private Claims parseClaims(String token) {
+    public Claims parseClaims(String token) {
         try {
             return Jwts.parserBuilder()
                 .setSigningKey(key)
@@ -66,16 +66,16 @@ public class TokenProvider {
                 .parseClaimsJws(token)
                 .getBody();
         } catch (SecurityException e) {
-            log.info("Invalid JWT signature.");
+            log.info("⚠️Invalid JWT signature.");
         } catch (MalformedJwtException e) {
-            log.info("Invalid JWT token.");
+            log.info("⚠️Invalid JWT token.");
         } catch (ExpiredJwtException e) {
-            log.info("Expired JWT token.");
+            log.info("⚠️Expired JWT token.");
             return e.getClaims();
         } catch (UnsupportedJwtException e) {
-            log.info("Unsupported JWT token.");
+            log.info("⚠️Unsupported JWT token.");
         } catch (IllegalArgumentException e) {
-            log.info("JWT token compact of handler are invalid.");
+            log.info("⚠️JWT token compact of handler are invalid.");
         }
         return null;
     }

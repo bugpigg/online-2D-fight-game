@@ -28,14 +28,14 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<MemberSignUpResponseDto> signUp(
         @RequestBody MemberSignUpRequestDto requestDto) {
-        log.info("✅ Member SignUp request ---> {}", requestDto);
+        log.info("☑️Member SignUp request ---> {}", requestDto);
         return ResponseEntity.ok(authService.signUp(requestDto));
     }
 
     @PostMapping("/login")
     public ResponseEntity<TokenResponseDto> login(HttpServletResponse response,
         @RequestBody MemberLoginRequestDto memberRequestDto) {
-        log.info("✅ Member Login request ---> {}", memberRequestDto);
+        log.info("☑️Member Login request ---> {}", memberRequestDto);
         TokenResponseDto responseDto = authService.login(memberRequestDto);
         CookieUtil.addCookie(response, responseDto.getGrantType(), responseDto.getRefreshToken(),
             (int) (responseDto.getRefreshTokenExpiresIn() / 1000));
@@ -46,7 +46,7 @@ public class AuthController {
     @PostMapping("/reissue")
     public ResponseEntity<TokenResponseDto> reissue(
         @RequestBody TokenReissueRequestDto tokenRequestDto) {
-        log.info("✅ Token Reissue request ---> {}", tokenRequestDto);
+        log.info("☑️Token Reissue request ---> {}", tokenRequestDto);
         return ResponseEntity.ok(authService.reissue(tokenRequestDto));
     }
 }

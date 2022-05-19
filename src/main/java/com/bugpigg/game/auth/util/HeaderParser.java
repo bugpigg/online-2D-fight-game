@@ -1,9 +1,11 @@
 package com.bugpigg.game.auth.util;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class HeaderParser {
+
     private final static String HEADER_AUTHORIZATION = "Authorization";
     private final static String TOKEN_PREFIX = "Bearer ";
 
@@ -19,6 +21,12 @@ public class HeaderParser {
         }
 
         return null;
+    }
+
+    public static String getAccessRequestRefreshToken(HttpServletRequest request) {
+        return CookieUtil.getCookie(request, TOKEN_PREFIX.trim())
+            .map(Cookie::getValue)
+            .orElse(null);
     }
 
     public static void setAccessTokenInHeader(HttpServletResponse response,
