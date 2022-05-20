@@ -105,3 +105,19 @@
   - 스크롤바 커스텀  
     https://jh91.tistory.com/entry/css-%EC%8A%A4%ED%81%AC%EB%A1%A4%EB%B0%94-%EC%BB%A4%EC%8A%A4%ED%85%80
 </details>
+
+<details>
+<summary>Day 8, 9 - 대기실 기능 구현 마무리 및 WebSocket 적용 </summary>
+
+- 작업 내역
+  - BE
+
+  - FE
+
+- 참고 자료
+
+</details>
+  
+
+  
+
