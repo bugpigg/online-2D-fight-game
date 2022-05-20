@@ -25,14 +25,10 @@ public class JwtFilter extends OncePerRequestFilter {
     ) throws ServletException, IOException {
 
         String accessTokenToValidate = HeaderParser.getAccessRequestToken(request);
-        String refreshTokenToValidate = HeaderParser.getAccessRequestRefreshToken(request);
 
         if (StringUtils.hasText(accessTokenToValidate) &&
-            tokenProvider.validateToken(accessTokenToValidate) &&
-            tokenProvider.validateToken(refreshTokenToValidate)) {
+            tokenProvider.validateToken(accessTokenToValidate)) {
             Authentication authentication = tokenProvider.getAuthentication(accessTokenToValidate);
-            if (!refreshTokenRepository.existsByKey(authentication.getName()))
-                throw new RuntimeException("Current user not exist");
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
         filterChain.doFilter(request, response);
